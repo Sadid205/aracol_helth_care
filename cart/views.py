@@ -32,4 +32,4 @@ class CartModelViewSet(ModelViewSet):
         medicines = Medicine.objects.filter(id__in=medicine_ids)
         cart_object.medicine.remove(*medicines)
         serializer = CartModelSerializer(cart_object)
-        return Response(serializer.data,status=status.HTTP_201_CREATED)
+        return Response(serializer.data,status=status.HTTP_200_OK)
