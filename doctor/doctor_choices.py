@@ -24,3 +24,10 @@ STATUS = (
     ("online","Online"),
     ("offline","Offline"),
 )
+
+
+ROLE = (
+    ("admin","admin"),
+    ("super_admin","super_admin"),
+    ("doctor","doctor"),
+)

@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Checkout(models.Model):
-    # author = ManyToMany relationship with author because , an authro can checkout many times.
+    patient = models.ForeignKey("patient.Patient",related_name="checkouts",on_delete=models.CASCADE)
     name = models.CharField(max_length=500,null=False,blank=False)
     address = models.CharField(max_length=600,null=False,blank=False)
     phone = models.CharField(max_length=15,null=False,blank=False)

@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'review',
     'experience',
     'banner',
+    'user',
     'bmi',
     'get_instance_video_consultation',
     'consult_a_specialist',

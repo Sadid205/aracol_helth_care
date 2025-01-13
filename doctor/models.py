@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from .doctor_choices import GENDER,DOCTOR_TYPE,DAYS,STATUS
+from .doctor_choices import GENDER,DOCTOR_TYPE,DAYS,STATUS,ROLE
 
 # Create your models here.
 class Doctor(models.Model):
@@ -39,6 +39,7 @@ class Doctor(models.Model):
     doctor_code = models.CharField(max_length=10,null=True,blank=True)
     about = models.TextField(max_length=1000,null=True,blank=True)
     status = models.CharField(choices=STATUS,default="offline",max_length=10)
+    role = models.CharField(choices=ROLE,max_length=20,default="doctor")
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}.{self.status}"

@@ -14,3 +14,9 @@ BLOOD_GROUPS = (
     ("AB+","AB+"),
     ("AB-","AB-"),
 )
+
+ROLE = (
+    ("admin","admin"),
+    ("super_admin","super_admin"),
+    ("patient","patient"),
+)

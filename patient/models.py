@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from .patient_choices import GENDER,BLOOD_GROUPS
+from .patient_choices import GENDER,BLOOD_GROUPS,ROLE
 
 # Create your models here.
 
@@ -27,6 +27,6 @@ class Patient(models.Model):
     total_registration_by_refer = models.PositiveIntegerField(blank=True,null=True,default=0) 
     successfull_referrals = models.PositiveIntegerField(null=True,blank=True,default=0)
     rewards_received = models.PositiveIntegerField(null=True,blank=True,default=0)
-
+    role = models.CharField(choices=ROLE,default="patient",max_length=20)
     def __str__(self):
         return f"{self.first_name} {self.last_name}."

@@ -33,4 +33,5 @@ urlpatterns = [
     path('bmi/',include('bmi.urls')),
     path('inst_video_consult/',include('get_instance_video_consultation.urls')),
     path('consult_a_specialist/',include('consult_a_specialist.urls')),
+    path('user/',include('user.urls')),
 ]
