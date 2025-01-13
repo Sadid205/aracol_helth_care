@@ -25,4 +25,12 @@ urlpatterns = [
     path('checkout/', include('checkout.urls')),
     path('medicine/', include('medicine.urls')),
     path('wishlist/', include('wish_list.urls')),
+    path('patient/',include('patient.urls')),
+    path('doctor/',include('doctor.urls')),
+    path('review/',include('review.urls')),
+    path('experience/',include('experience.urls')),
+    path('banner/',include('banner.urls')),
+    path('bmi/',include('bmi.urls')),
+    path('inst_video_consult/',include('get_instance_video_consultation.urls')),
+    path('consult_a_specialist/',include('consult_a_specialist.urls')),
 ]

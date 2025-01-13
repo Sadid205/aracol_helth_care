@@ -31,6 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'doctor',
+    'patient',
+    'review',
+    'experience',
+    'banner',
+    'bmi',
+    'get_instance_video_consultation',
+    'consult_a_specialist',
     'medicine',
     'category',
     'cart',
