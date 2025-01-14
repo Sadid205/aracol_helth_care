@@ -10,10 +10,12 @@ class DoctorFilter(filters.FilterSet):
     first_name = filters.CharFilter(field_name="first_name",lookup_expr="icontains")
     last_name = filters.CharFilter(field_name="last_name",lookup_expr="icontains")
     specialization = filters.CharFilter(field_name="specialization",lookup_expr="icontains")
-   
+    doctor_code = filters.CharFilter(field_name="doctor_code",lookup_expr="icontains")
+    depertment = filters.CharFilter(field_name="depertment",lookup_expr="icontains")
+
     class Meta:
         model = Doctor
-        fields = ['first_name','last_name','specialization']
+        fields = ['first_name','last_name','specialization','doctor_code','depertment']
 
 class DoctorModelViewSet(ModelViewSet):
     queryset = Doctor.objects.all()
