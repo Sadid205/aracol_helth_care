@@ -11,6 +11,8 @@ class Patient(models.Model):
     image = models.URLField(max_length=500,null=True,blank=True)
     gender = models.CharField(max_length=10,choices=GENDER,null=True,blank=True)
     date_of_birth = models.DateField(blank=True,null=True)
+    cart = models.OneToOneField('cart.Cart',related_name='patient',on_delete=models.CASCADE,null=True,blank=True)
+    wish_list = models.OneToOneField('wish_list.WishList',related_name='patient',on_delete=models.CASCADE,null=True,blank=True)
     district = models.CharField(max_length=100,null=True,blank=True)
     sub_district = models.CharField(max_length=100,null=True,blank=True)
     union_pourashava_ward = models.CharField(max_length=100,blank=True,null=True)
@@ -29,4 +31,4 @@ class Patient(models.Model):
     rewards_received = models.PositiveIntegerField(null=True,blank=True,default=0)
     role = models.CharField(choices=ROLE,default="patient",max_length=20)
     def __str__(self):
-        return f"{self.first_name} {self.last_name}."
+        return f"{self.user.username}"
