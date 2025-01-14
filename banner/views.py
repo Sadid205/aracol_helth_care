@@ -24,7 +24,8 @@ class BannerModelView(ModelViewSet):
         return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
     def list(self,request,*args,**kwargs):
         page = request.query_params.get("page")
-        if page is None:
-            return Response({"error":"Please select a page!"})
+        if page!="doctor" and page!="home":
+            return Response({"error":"Please select valid a page!"})
         banner_list = Banner.objects.filter(page=page)
-        return Response({"success":banner_list},status=status.HTTP_200_OK)
+        banner_serializer = BannerModelSerializer(banner_list,many=True)
+        return Response({"success":banner_serializer.data},status=status.HTTP_200_OK)
